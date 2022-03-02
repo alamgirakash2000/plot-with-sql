@@ -1,0 +1,68 @@
+.app {
+  background: black;
+  overflow-x: hidden;
+}
+
+.header {
+  background-color: #6f42c1;
+  color: white;
+  height: 4rem;
+  overflow-x: hidden;
+  text-align: center;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .entry {
+      input {
+        border: 0;
+        outline: 0;
+      }
+      button {
+        border: 0;
+        &:focus {
+          border: 5px;
+        }
+      }
+    }
+  }
+}
+
+.plots {
+  width: 100vw;
+  .plot {
+    margin: 1rem;
+    padding: 0.5rem;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.6rem;
+    box-shadow: 3px 3px teal;
+
+    .btns {
+      display: flex;
+      justify-content: space-around;
+      .btn {
+        border: 0;
+
+        &:hover {
+          outline: 0;
+        }
+      }
+    }
+  }
+}
+
+.fullScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 105vh;
+  width: 100vw;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.849);
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 2rem;
+}
