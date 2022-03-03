@@ -27,7 +27,8 @@
     "react-plotly.js": "^2.5.1",
     "react-scripts": "^5.0.0",
     "socket.io": "^2.3.0",
-    "socket.io-client": "^2.3.0"
+    "socket.io-client": "^2.3.0",
+    "concurrently": "^7.0.0"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
