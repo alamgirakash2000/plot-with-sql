@@ -40,7 +40,7 @@ export default function PlotComponent({ data, title }) {
             height: 400,
             title: `${title}`,
             yaxis: {
-              range: [100, 4095],
+              range: [100, 4200],
             },
           }}
         />

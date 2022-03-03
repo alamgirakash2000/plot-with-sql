@@ -4,14 +4,16 @@ const Header = ({ entry, setEntry, handleSubmit }) => {
   return (
     <div className='header'>
       <div className='container'>
-        <div className='entry'>
+        <form className='entry'>
           <input
             placeholder='Number of visible data (50-2500)'
             onChange={(e) => setEntry(e.target.value)}
             type='number'
           />
-          <button onClick={handleSubmit}>SET</button>
-        </div>
+          <button type='submit' onClick={handleSubmit}>
+            SET
+          </button>
+        </form>
 
         <h1 className='py-1'>Voltage Plotting</h1>
         <div className='something'></div>

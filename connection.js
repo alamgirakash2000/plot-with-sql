@@ -11,7 +11,7 @@ const db = new sqlite3.Database(
   }
 );
 
-const loadData = () => {
+const loadDataFromSQL = () => {
   channel = [0, 3, 4, 5, 6, 7];
   let data = {
     channel0: [],
@@ -37,4 +37,4 @@ const loadData = () => {
   return data;
 };
 
-module.exports = loadData;
+module.exports = loadDataFromSQL;

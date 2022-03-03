@@ -17,8 +17,8 @@ const App = ({}) => {
   const [data, setData] = useState([]);
   const [entry, setEntry] = useState();
 
-  const handleSubmit = () => {
-    console.log(entry);
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (entry > 50 && entry < 25000) {
       try {
         axios.post("http://localhost:8080", parseInt(entry));
@@ -27,7 +27,7 @@ const App = ({}) => {
       }
       setEntry(0);
     } else {
-      window.alert("Please enter a value between 50 to 2500");
+      window.alert("Please enter a value between 50 to 25,000");
       setEntry(0);
     }
   };

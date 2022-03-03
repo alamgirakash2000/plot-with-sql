@@ -29,7 +29,7 @@ export default function FullScreenPlot({ data, title, setOpen }) {
             height: 600,
             title: `${title}`,
             yaxis: {
-              range: [100, 4095],
+              range: [100, 4200],
             },
           }}
         />
