@@ -6,17 +6,25 @@ import createPlotlyComponent from "react-plotly.js/factory";
 import FullScreenPlot from "./FullScreenPlot";
 const Plot = createPlotlyComponent(Plotly);
 
-export default function PlotComponent({ data, title }) {
+export default function PlotComponent({
+  pauseManager,
+  setPauseManager,
+  data,
+  title,
+  n,
+}) {
   const [myData, setMyData] = useState(data);
   const [open, setOpen] = useState(false);
-  const [pause, setPause] = useState(false);
+
+  // useEffect(() => {
+  //   if (!pauseManager[n]) {
+  //     setMyData(data);
+  //   }
+  //   console.log("Yess");
+  // }, []);
 
   useEffect(() => {
-    setMyData(data);
-  }, []);
-
-  useEffect(() => {
-    if (!pause) {
+    if (!pauseManager[n]) {
       setMyData(data);
     }
   }, [data]);
@@ -24,7 +32,6 @@ export default function PlotComponent({ data, title }) {
   return (
     <div className='plot'>
       {open && <FullScreenPlot data={myData} setOpen={setOpen} title={title} />}
-      {console.log(myData)}
       {data && (
         <Plot
           data={[
@@ -46,13 +53,24 @@ export default function PlotComponent({ data, title }) {
         />
       )}
       <div className='btns'>
-        {!pause && (
-          <button onClick={() => setPause(true)} className='btn btn-info'>
+        {!pauseManager[n] && (
+          <button
+            onClick={() => {
+              pauseManager[n] = true;
+              setPauseManager(pauseManager);
+              setMyData(data);
+            }}
+            className='btn btn-info'>
             PAUSE
           </button>
         )}
-        {pause && (
-          <button onClick={() => setPause(false)} className='btn btn-warning'>
+        {pauseManager[n] && (
+          <button
+            onClick={() => {
+              pauseManager[n] = false;
+              setPauseManager(pauseManager);
+            }}
+            className='btn btn-warning'>
             RESUME
           </button>
         )}
