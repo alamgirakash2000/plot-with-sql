@@ -36,7 +36,7 @@ setInterval(async () => {
   if (n + number_of_data > total_number_of_data - 25) {
     n = 0;
   }
-}, 1000);
+}, 3000);
 
 // 1. listen for socket connections
 io.on("connection", (client) => {
