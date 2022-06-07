@@ -16,16 +16,9 @@ export default function PlotComponent({
   const [myData, setMyData] = useState(data);
   const [open, setOpen] = useState(false);
 
-  // useEffect(() => {
-  //   if (!pauseManager[n]) {
-  //     setMyData(data);
-  //   }
-  //   console.log("Yess");
-  // }, []);
-
   useEffect(() => {
-    if (!pauseManager[n]) {
-      setMyData(data);
+    if (!pauseManager[n] && data?.y) {
+      if (data.y.length >= 5000) setMyData(data);
     }
   }, [data]);
 

@@ -19,7 +19,7 @@ const App = ({}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (entry > 50 && entry < 25000) {
+    if (entry > 50) {
       try {
         axios.post("http://localhost:8080", parseInt(entry));
       } catch {

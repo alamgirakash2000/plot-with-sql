@@ -6,6 +6,7 @@ const Header = ({ entry, setEntry, handleSubmit }) => {
       <div className='container'>
         <form className='entry'>
           <input
+            value={entry}
             placeholder='Number of visible data (50-2500)'
             onChange={(e) => setEntry(e.target.value)}
             type='number'
@@ -15,7 +16,7 @@ const Header = ({ entry, setEntry, handleSubmit }) => {
           </button>
         </form>
 
-        <h1 className='py-1'>Voltage Plotting</h1>
+        <h1 className='py-1'>Signal Monitoring</h1>
         <div className='something'></div>
       </div>
     </div>
